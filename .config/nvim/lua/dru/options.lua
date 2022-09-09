@@ -15,6 +15,7 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.hlsearch = true
 vim.opt.ignorecase = false
 vim.opt.incsearch = true
+vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.numberwidth = 4
 vim.opt.pumheight = 10		-- popup menu height
