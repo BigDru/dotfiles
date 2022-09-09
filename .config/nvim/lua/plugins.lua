@@ -23,7 +23,7 @@ local packer_bootstrap = ensure_packer()
 -- Note: requires nvim 0.7.0 or greater
 vim.api.nvim_create_autocmd('BufWritePost', 
 {
-    group = group_id,
+    group = vim.api.nvim_create_augroup('packer_user_config', { clear = true }),
     pattern = 'plugins.lua',
     command = 'source <afile> | PackerCompile'
 })
@@ -32,19 +32,21 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- lualine
-    use 
-    {
-        'nvim-lualine/lualine.nvim',
-        event = 'VimEnter',
-        config = function()
-            require('lualine').setup()
-        end,
-        requires = 
-        { 
-            'kyazdani42/nvim-web-devicons', 
-            opt = true ,
-        },
-    }
+    --use 
+    --{
+        --'nvim-lualine/lualine.nvim',
+        --event = 'VimEnter',
+        --config = function()
+            --require('lualine').setup()
+        --end,
+        --requires = 
+        --{ 
+            --'kyazdani42/nvim-web-devicons', 
+            --opt = true ,
+        --},
+    --}
+
+    use 'RRethy/nvim-base16'
 
     if packer_bootsrap then
         require('packer').sync()
