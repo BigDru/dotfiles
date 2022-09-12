@@ -42,19 +42,17 @@ return require('packer').startup({
         -- use 'nvim-lua/plenary.nvim' -- Useful lua functions used in lots of plugins
 
         -- lualine
-        --[[
         use
         {
             'nvim-lualine/lualine.nvim',
             config = get_setup('lualine'),
-            event = 'VimEnter',
+            --event = 'VimEnter',
             requires = 
             { 
                 'kyazdani42/nvim-web-devicons', 
                 opt = true,
             },
         }
-        ]]
 
         use 'RRethy/nvim-base16'
 
