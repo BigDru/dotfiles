@@ -20,6 +20,7 @@ local ensure_packer = function()
         install_path
     })
     vim.api.nvim_command('packadd packer.nvim')
+    print("Packer bootstrapped")
     return true
   end
   return false
@@ -41,6 +42,7 @@ return require('packer').startup({
         -- use 'nvim-lua/plenary.nvim' -- Useful lua functions used in lots of plugins
 
         -- lualine
+        --[[
         use
         {
             'nvim-lualine/lualine.nvim',
@@ -52,10 +54,12 @@ return require('packer').startup({
                 opt = true,
             },
         }
+        ]]
 
         use 'RRethy/nvim-base16'
 
-        if packer_bootsrap then
+        if packer_bootstrap then
+            print("Packer synced")
             require('packer').sync()
         end
     end,
