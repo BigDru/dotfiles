@@ -46,7 +46,6 @@ return require('packer').startup({
         {
             'nvim-lualine/lualine.nvim',
             config = get_setup('lualine'),
-            --event = 'VimEnter',
             requires = 
             { 
                 'kyazdani42/nvim-web-devicons', 
@@ -54,7 +53,11 @@ return require('packer').startup({
             },
         }
 
-        use 'RRethy/nvim-base16'
+        use 
+        {
+            'RRethy/nvim-base16',
+            config = get_setup('nvim-base16')
+        }
 
         if packer_bootstrap then
             print("Packer synced")
