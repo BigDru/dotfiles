@@ -15,3 +15,11 @@ Windows:
 Linux:
 
     git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+
+Patched fonts are needed to see icons:
+Clone to separate folder then run install.sh or install.ps1
+
+    git clone https://github.com/ryanoasis/nerd-fonts
+
+
