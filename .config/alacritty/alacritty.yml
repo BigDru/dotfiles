@@ -444,6 +444,10 @@ font:
 #  program: /bin/bash
 #  args:
 #    - --login
+shell:
+  program: "C:/Program Files/PowerShell/7/pwsh.exe"
+  args:
+    - -WorkingDirectory ~
 
 # Startup directory
 #

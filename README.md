@@ -23,3 +23,11 @@ Clone to separate folder then run install.sh or install.ps1
     git clone https://github.com/ryanoasis/nerd-fonts
 
 
+If running on windows be sure to update to the lastest powershell (7+)
+
+
+    winget search powershell
+    winget install powershell -v <version> -s <source>
+
+
+Then create a symbolic link at the $PROFILE location (just type $profile or use Get-Variable)
