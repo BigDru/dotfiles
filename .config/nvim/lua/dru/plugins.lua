@@ -74,24 +74,34 @@ return require('packer').startup({
             "hrsh7th/nvim-cmp",
             requires =
             {
-                --{ "hrsh7th/cmp-nvim-lsp" },         -- language server protocol completion (requires setting up an LS)
-                { "hrsh7th/cmp-nvim-lua" },         -- lua snips
-                { "saadparwaiz1/cmp_luasnip" },     -- lua snips
-                { "hrsh7th/cmp-buffer" },           -- buffer completions
-                { "hrsh7th/cmp-path" },             -- path completions
-                { "hrsh7th/cmp-cmdline" },          -- vim commandline completions
+                { "saadparwaiz1/cmp_luasnip" },             -- lua snips
+                { "hrsh7th/cmp-nvim-lua" },                 -- nvim lua snips (api functions included!)
+                { "hrsh7th/cmp-buffer" },                   -- buffer completions
+                { "hrsh7th/cmp-path" },                     -- path completions
+                { "hrsh7th/cmp-cmdline" },                  -- vim commandline completions
                 { "rafamadriz/friendly-snippets" },
-                --{ "hrsh7th/vim-vsnip-integ" },
+                { "hrsh7th/cmp-nvim-lsp" },                 -- language server protocol completion (requires setting up an LS)
                 --{ "hrsh7th/cmp-calc" },
 
-                -- snipping engines
-                { "L3MON4D3/LuaSnip" },
-                --{ "hrsh7th/vim-vsnip" },
-                --{ "hrsh7th/cmp-vsnip" },
+                { "L3MON4D3/LuaSnip" },                     --snipping engine
             },
             config = get_setup("cmp"),
         }
 
+        -- LSP
+        use
+        {
+            "neovim/nvim-lspconfig",                        -- enable LSP
+            requires =
+            {
+                { "williamboman/mason.nvim" },              -- Language Server installer
+                { "williamboman/mason-lspconfig.nvim" },    -- Makes managing packages installed by mason easier
+                { "VonHeikemen/lsp-zero.nvim" },            -- sets up installed LSPs with nvim-cmp automatically
+            },
+            config = get_setup("mason")
+        }
+
+        -- Bootstrap
         if packer_bootstrap then
             print("Packer synced")
             require('packer').sync()
