@@ -3,7 +3,7 @@ Be sure to create a symbolic link at ~/AppData/Local/nvim to ~/.config/nvim
 
     New-Item -Path ~\AppData\Local\nvim -ItemType SymbolicLink -Value <repo_location>\.config\nvim
 
-Linux: 
+Linux:
 
     ln -s ~/git/dotfiles/.config/nvim ~/.config/nvim
 
@@ -31,3 +31,7 @@ If running on windows be sure to update to the lastest powershell (7+)
 
 
 Then create a symbolic link at the $PROFILE location (just type $profile or use Get-Variable)
+
+
+To get telescope live_grep to work be sure to add a the location of your downloaded ripgrep binary to your Path
+    See github.com\BurntSushi\ripgrep\releases

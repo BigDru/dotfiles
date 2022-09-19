@@ -98,7 +98,19 @@ return require('packer').startup({
                 { "williamboman/mason-lspconfig.nvim" },    -- Makes managing packages installed by mason easier
                 { "VonHeikemen/lsp-zero.nvim" },            -- sets up installed LSPs with nvim-cmp automatically
             },
-            config = get_setup("mason")
+            config = get_setup("mason"),
+        }
+
+        -- Telescope
+        use
+        {
+            "nvim-telescope/telescope.nvim",
+            requires =
+            {
+                { "nvim-lua/plenary.nvim" },
+                { "nvim-telescope/telescope-fzy-native.nvim" },     -- precompiled fuzzy finder to speed up searches
+            },
+            config = get_setup("telescope"),
         }
 
         -- Bootstrap
