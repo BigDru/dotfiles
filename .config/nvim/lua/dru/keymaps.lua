@@ -5,7 +5,7 @@ vim.api.nvim_set_keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.api.nvim_set_keymap("n", "<leader>e", ":Lex<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Resize with arrows
 vim.api.nvim_set_keymap("n", "<C-Up>", ":resize +2<CR>", opts)

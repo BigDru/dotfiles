@@ -49,7 +49,6 @@ return require('packer').startup({
             requires =
             {
                 'kyazdani42/nvim-web-devicons',
-                opt = true,
             },
         }
 
@@ -111,6 +110,17 @@ return require('packer').startup({
                 { "nvim-telescope/telescope-fzy-native.nvim" },     -- precompiled fuzzy finder to speed up searches
             },
             config = get_setup("telescope"),
+        }
+
+        -- Nvim tree
+        use
+        {
+            "kyazdani42/nvim-tree.lua",
+            requires =
+            {
+                'kyazdani42/nvim-web-devicons',
+            },
+            config = get_setup("nvim-tree"),
         }
 
         -- Bootstrap
