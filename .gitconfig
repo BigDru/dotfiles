@@ -1,0 +1,8 @@
+[user]
+	name = Alexandru Dumbrava
+	email = al.dumbrava@gmail.com
+	username = bigdru
+[init]
+	defaultBranch = develop
+[core]
+	editor = nvim
