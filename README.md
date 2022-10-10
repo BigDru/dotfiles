@@ -35,3 +35,6 @@ Then create a symbolic link at the $PROFILE location (just type $profile or use 
 
 To get telescope live_grep to work be sure to add a the location of your downloaded ripgrep binary to your Path
     See github.com\BurntSushi\ripgrep\releases
+
+
+.profile sets up some environmental variables for texlive... be sure to install it

@@ -123,6 +123,12 @@ return require('packer').startup({
             config = get_setup("nvim-tree"),
         }
 
+        -- LaTex
+        use
+        {
+            "lervag/vimtex"
+        }
+
         -- Bootstrap
         if packer_bootstrap then
             print("Packer synced")
