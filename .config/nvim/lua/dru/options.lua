@@ -1,3 +1,4 @@
+-- help options to see man
 vim.opt.autoindent = true
 vim.opt.backup = false
 vim.opt.cmdheight = 2           -- more space in the command line for displaying messages
@@ -34,6 +35,7 @@ vim.opt.splitbelow = true       -- horizontal splits are forced below
 vim.opt.splitright = true       -- vertical splits are forced right
 vim.opt.swapfile = false
 vim.opt.tabstop = 4             -- visually, how many cols a tab should use
+vim.opt.termguicolors = true    -- Enables 24-bit RBG color
 vim.opt.timeoutlen = 1000       -- time to wait for a mapped sequenct to complete (ms)
 vim.opt.undofile = true         -- creates a persistant file with undo history in the same directory
 vim.opt.updatetime = 300        -- faster completion (4000 ms default)
