@@ -4,6 +4,10 @@ if not status_ok then
     return
 end
 
+--disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 nvim_tree.setup(
 {
     disable_netrw = true,           -- disable Lexplore
@@ -23,7 +27,15 @@ nvim_tree.setup(
         centralize_selection = true,
         number = true,
     },
+    renderer =
+    {
+        group_empty = false,
+    },
     diagnostics = {
         enable = true,
+    },
+    filters =
+    {
+        dotfiles = false,
     },
 })
