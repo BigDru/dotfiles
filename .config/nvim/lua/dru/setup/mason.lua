@@ -21,4 +21,19 @@ if not lsp_zero_ok then
 end
 
 lsp_zero.preset("recommended")
+
+lsp_zero.configure('sumneko_lua',
+{
+    settings =
+    {
+        Lua =
+        {
+            diagnostics =
+            {
+                globals = { "vim" },
+            },
+        },
+    },
+})
+
 lsp_zero.setup()
