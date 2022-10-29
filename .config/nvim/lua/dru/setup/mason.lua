@@ -1,6 +1,24 @@
-require("mason").setup()
-require("mason-lspconfig").setup()
+local mason_ok, mason = pcall(require, "mason")
+if not mason_ok then
+    vim.notify("Unable to load Mason")
+    return
+end
 
-local zero = require("lsp-zero")
-zero.preset("recommended")
-zero.setup()
+mason.setup()
+
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not mason_lspconfig_ok then
+    vim.notify("Unable to load Mason-lspconfig")
+    return
+end
+
+mason_lspconfig.setup()
+
+local lsp_zero_ok, lsp_zero = pcall(require, "lsp-zero")
+if not lsp_zero_ok then
+    vim.notify("Unable to load lsp-zero")
+    return
+end
+
+lsp_zero.preset("recommended")
+lsp_zero.setup()
