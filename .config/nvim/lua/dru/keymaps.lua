@@ -38,7 +38,7 @@ vim.api.nvim_set_keymap("v", ">", ">gv", opts)
 vim.api.nvim_set_keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 vim.api.nvim_set_keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
--- If you select something in visual mode and then paste over it, the new text will overwrite your register. 
+-- If you select something in visual mode and then paste over it, the new text will overwrite your register.
 --  This mapping will hold onto whatever is currently in your register so you can select something else and overwrite again
 vim.api.nvim_set_keymap("v", "p", '"_dP', opts)
 
@@ -52,3 +52,11 @@ vim.api.nvim_set_keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Telescope
 vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+
+-- Trouble
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+

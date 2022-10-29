@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('BufWritePost',
 
 -- bootstrap packer
 local ensure_packer = function()
-  local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
   if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.fn.system({
@@ -30,7 +30,8 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-function get_setup(name)
+local function get_setup(name)
+    --todo(dru): make pcall
     return string.format('require(\'dru/setup/%s\')', name)
 end
 
@@ -76,12 +77,12 @@ return packer.startup({
             "hrsh7th/nvim-cmp",
             requires =
             {
-                { "saadparwaiz1/cmp_luasnip" },             -- lua snips
-                { "hrsh7th/cmp-nvim-lua" },                 -- nvim lua snips (api functions included!)
                 { "hrsh7th/cmp-buffer" },                   -- buffer completions
                 { "hrsh7th/cmp-path" },                     -- path completions
                 { "hrsh7th/cmp-cmdline" },                  -- vim commandline completions
                 { "rafamadriz/friendly-snippets" },
+                { "saadparwaiz1/cmp_luasnip" },             -- lua snips
+                { "hrsh7th/cmp-nvim-lua" },                 -- nvim lua snips (api functions included!)
                 { "hrsh7th/cmp-nvim-lsp" },                 -- language server protocol completion (requires setting up an LS)
                 --{ "hrsh7th/cmp-calc" },
 
@@ -103,6 +104,17 @@ return packer.startup({
             config = get_setup("mason"),
         }
 
+        -- Trouble
+        use
+        {
+            "folke/trouble.nvim",
+            requires =
+            {
+                'kyazdani42/nvim-web-devicons',
+            },
+            config = get_setup("trouble"),
+        }
+
         -- Telescope
         use
         {
@@ -114,14 +126,14 @@ return packer.startup({
             },
             config = get_setup("telescope"),
         }
-
+--
         -- Nvim tree
         use
         {
             "kyazdani42/nvim-tree.lua",
             requires =
             {
-                'kyazdani42/nvim-web-devicons',
+                "kyazdani42/nvim-web-devicons",
             },
             config = get_setup("nvim-tree"),
         }
