@@ -11,8 +11,8 @@ vim.g.loaded_netrwPlugin = 1
 nvim_tree.setup(
 {
     disable_netrw = true,           -- disable Lexplore
-    open_on_setup = true,
-    open_on_setup_file = true,
+    open_on_setup = false,
+    open_on_setup_file = false,
     open_on_tab = true,
     hijack_cursor = true,
     prefer_startup_root = false,    -- default value is false
@@ -29,7 +29,21 @@ nvim_tree.setup(
     },
     renderer =
     {
+        add_trailing = true,
         group_empty = false,
+        highlight_opened_files = "all",
+        indent_width = 2, -- default value is 2
+        indent_markers =
+        {
+            enable = true,
+            inline_arrows = false,
+        },
+        icons =
+        {
+            show = {
+                folder_arrow = false,
+            },
+        },
     },
     diagnostics = {
         enable = true,
