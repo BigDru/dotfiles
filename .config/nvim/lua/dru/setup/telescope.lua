@@ -4,6 +4,17 @@ if not status_ok then
     return
 end
 
-telescope.setup()
+telescope.setup({
+    pickers = {
+        find_files = {
+            hidden = true,
+        },
+        live_grep = {
+            additional_args = function(opts)
+                return {"--hidden"}
+            end
+        },
+    },
+})
 
 telescope.load_extension("fzy_native")
