@@ -61,19 +61,22 @@ cmp.setup
     {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-        -- Windows passes <C-space> to Alacritty as 0x20 instead of as <C-space>
+        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }), -- scroll doumentation popup if it has scrollbar
+        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }), -- scroll doumentation popup if it has scrollbar
+        -- Windows passes <C-space> to Alacritty as 0x20 instead of as <C-space>, so instead we'll use <A-space>
         ["<A-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ["<C-e>"] = cmp.mapping {
+        ["<C-e>"] = cmp.mapping 
+        {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         },
 
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
+        -- true will mean that it will select the ghost text
         ["<CR>"] = cmp.mapping.confirm { select = true },
+
         ["<Tab>"] = cmp.mapping(
             function(fallback)
                 if cmp.visible() then
@@ -89,7 +92,6 @@ cmp.setup
                 end
             end,
             { "i", "s", }),
-
         ["<S-Tab>"] = cmp.mapping(
             function(fallback)
                 if cmp.visible() then
@@ -107,25 +109,26 @@ cmp.setup
     },
     formatting =
     {
-    fields = { "kind", "abbr", "menu" },
-    format =
-        function(entry, vim_item)
-            -- Kind icons
-            vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            vim_item.menu = ({
-                nvim_lsp = "[LSP]",
-                nvim_lua = "[nvim_lua]",
-                luasnip = "[Snippet]",
-                buffer = "[Buffer]",
-                path = "[Path]",
-            })[entry.source.name]
+        fields = { "abbr", "kind", "menu" },
+        format =
+            function(entry, vim_item)
+                -- Kind icons
+                --vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+                vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+                vim_item.menu = ({
+                    nvim_lsp = "[LSP]",
+                    nvim_lua = "[nvim_lua]",
+                    luasnip = "[luasnip]",
+                    buffer = "[buffer]",
+                    path = "[path]",
+                })[entry.source.name]
 
-            return vim_item
-        end,
+                return vim_item
+            end,
     },
     sources =
     {
+        -- the order you have here is the order in which they will appear
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "luasnip" },
@@ -144,7 +147,7 @@ cmp.setup
     },
     experimental =
     {
-        ghost_text = false,
+        ghost_text = true,
         native_menu = false,
     },
 }
