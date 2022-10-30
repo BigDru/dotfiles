@@ -66,7 +66,7 @@ cmp.setup
         -- Windows passes <C-space> to Alacritty as 0x20 instead of as <C-space>, so instead we'll use <A-space>
         ["<A-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ["<C-e>"] = cmp.mapping 
+        ["<C-e>"] = cmp.mapping
         {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
