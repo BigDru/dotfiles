@@ -133,6 +133,10 @@ return packer.startup({
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate",
             config = get_setup("treesitter"),
+            requires =
+            {
+                { "p00f/nvim-ts-rainbow" },
+            }
         }
 
         -- Nvim tree

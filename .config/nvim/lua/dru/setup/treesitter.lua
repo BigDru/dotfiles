@@ -20,8 +20,15 @@ configs.setup
         enable = true,
         disable =
         {
+            "lua",
             -- provide list of strings for parsers that aren't indenting well.
             -- Chris@machine offered "yaml" as an example
         },
+    },
+    rainbow =
+    {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = nil,
     },
 }
