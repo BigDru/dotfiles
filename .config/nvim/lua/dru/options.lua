@@ -2,7 +2,7 @@
 vim.opt.autoindent = true
 vim.opt.backup = false
 vim.opt.cmdheight = 2           -- more space in the command line for displaying messages
-vim.opt.completeopt =           -- mostly for cmp (todo(dru): play with more)
+vim.opt.completeopt =           -- mostly for cmp (TODO: play with more)
 {
     "menuone",                  -- use popup menu even when there is only one match
     --"preview",                  -- Show extra information about the currently selected completion in the preview window

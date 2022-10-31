@@ -40,5 +40,5 @@ To get telescope live_grep to work be sure to add a the location of your downloa
 .profile sets up some environmental variables for texlive... be sure to install it
 
 
-todo:
+TODO:
  - Fix nvim-tree close if last window open in tab. (Currently using keymaps for ZZ and ZQ)

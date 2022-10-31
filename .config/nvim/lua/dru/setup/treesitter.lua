@@ -31,4 +31,8 @@ configs.setup
         extended_mode = true,
         max_file_lines = nil,
     },
+    autopairs =
+    {
+        enable = true,
+    },
 }

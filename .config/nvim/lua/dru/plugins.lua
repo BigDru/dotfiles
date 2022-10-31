@@ -31,7 +31,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 local function get_setup(name)
-    --todo(dru): make pcall
+    -- TODO: make pcall
     return string.format('require(\'dru/setup/%s\')', name)
 end
 
@@ -44,6 +44,11 @@ end
 return packer.startup({
     function(use)
         use('wbthomason/packer.nvim') -- Packer manages itself
+
+        use
+        {
+            "nvim-lua/plenary.nvim",
+        }
 
         -- lualine
         use
@@ -104,6 +109,17 @@ return packer.startup({
             config = get_setup("mason"),
         }
 
+        -- Telescope
+        use
+        {
+            "nvim-telescope/telescope.nvim",
+            requires =
+            {
+                { "nvim-telescope/telescope-fzy-native.nvim" },     -- precompiled fuzzy finder to speed up searches
+            },
+            config = get_setup("telescope"),
+        }
+
         -- Trouble
         use
         {
@@ -115,16 +131,11 @@ return packer.startup({
             config = get_setup("trouble"),
         }
 
-        -- Telescope
+        -- todo-comments
         use
         {
-            "nvim-telescope/telescope.nvim",
-            requires =
-            {
-                { "nvim-lua/plenary.nvim" },
-                { "nvim-telescope/telescope-fzy-native.nvim" },     -- precompiled fuzzy finder to speed up searches
-            },
-            config = get_setup("telescope"),
+            "folke/todo-comments.nvim",
+            config = get_setup("todo-comments"),
         }
 
         -- Treesitter
@@ -136,6 +147,11 @@ return packer.startup({
             requires =
             {
                 { "p00f/nvim-ts-rainbow" },
+                --{ "nvim-treesitter/playground" }, -- useful for developing TS plugins or themes
+                {
+                    "windwp/nvim-autopairs",
+                    config = get_setup("autopairs"),
+                },
             }
         }
 
