@@ -172,6 +172,13 @@ return packer.startup({
             "lervag/vimtex"
         }
 
+        -- ToggleTerm
+        use
+        {
+            "akinsho/toggleterm.nvim",
+            config = get_setup("toggleterm"),
+        }
+
         -- Bootstrap
         if packer_bootstrap then
             print("Packer synced")
