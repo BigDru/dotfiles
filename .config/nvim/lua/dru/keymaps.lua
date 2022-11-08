@@ -63,3 +63,6 @@ vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnost
 vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
+-- Navigate buffers
+vim.api.nvim_set_keymap("n", "<S-l>", ":bnext<cr>", opts)
+vim.api.nvim_set_keymap("n", "<S-h>", ":bprev<cr>", opts)

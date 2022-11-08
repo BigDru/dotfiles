@@ -169,7 +169,8 @@ return packer.startup({
         -- LaTex
         use
         {
-            "lervag/vimtex"
+            "lervag/vimtex",
+            config = get_setup("vimtex"),
         }
 
         -- ToggleTerm
@@ -177,6 +178,17 @@ return packer.startup({
         {
             "akinsho/toggleterm.nvim",
             config = get_setup("toggleterm"),
+        }
+
+        -- Bufferline
+        use
+        {
+            "akinsho/bufferline.nvim",
+            config = get_setup("bufferline"),
+            requires =
+            {
+                "moll/vim-bbye", -- used because the regular :bdelete is a bit buggy at times
+            },
         }
 
         -- Bootstrap

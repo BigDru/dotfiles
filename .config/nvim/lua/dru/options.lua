@@ -1,6 +1,7 @@
 -- help options to see man
-vim.opt.autoindent = true
+vim.opt.autoindent = true       -- Copy indent from current line when starting a new line
 vim.opt.backup = false
+vim.opt.cindent = false          -- Enables automatic C program indenting for cinkeys (default "0{,0},0),0],:,0#,!^F,o,O,e")
 vim.opt.cmdheight = 2           -- more space in the command line for displaying messages
 vim.opt.completeopt =           -- mostly for cmp (TODO: play with more)
 {
@@ -29,7 +30,7 @@ vim.opt.showtabline = 2         -- always show tab pages
 vim.opt.signcolumn = "yes"      -- always show sign column (gray column on left of numbers) (prevents text shifting)
 vim.opt.softtabstop = 0         -- if different from tabstop, spaces are used to make the difference. 0 means this feature is off
 vim.opt.smartcase = false       -- overrides ignorecase option if search pattern contains upper case characters
-vim.opt.smartindent = true      -- tabs on new lines
+vim.opt.smartindent = true     -- tabs on new lines (very annoying when set to true)
 vim.opt.spelllang = "en"        -- for set spell (spellchecking)
 vim.opt.splitbelow = true       -- horizontal splits are forced below
 vim.opt.splitright = true       -- vertical splits are forced right

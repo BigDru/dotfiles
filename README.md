@@ -41,4 +41,8 @@ To get telescope live_grep to work be sure to add a the location of your downloa
 
 
 TODO:
- - Fix nvim-tree close if last window open in tab. (Currently using keymaps for ZZ and ZQ)
+    - Fix nvim-tree close if last window open in tab. (Currently using keymaps for ZZ and ZQ)
+    - Create a shortkey for vim-bbye's Bdelete
+        - <leader> b d
+            - buffer delete
+    - Add autocmd for resetting indentexpr for .tex files
