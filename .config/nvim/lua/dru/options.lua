@@ -20,6 +20,7 @@ vim.opt.keywordprg = ":help"    -- Needed on windows (even WSL)
 vim.opt.list = true             -- Enable list mode: show spaces, tabs, and eols
 vim.opt.listchars = 'tab:►►►,space:·,nbsp:+,eol:↵'
 vim.opt.mouse = "a"             -- enable all mouse support
+vim.opt.mousemoveevent = true   -- deliver mouse move events to input queue
 vim.opt.number = true           -- set numbers in file
 vim.opt.numberwidth = 5         -- width of numbers column
 vim.opt.pumheight = 10          -- popup menu height
