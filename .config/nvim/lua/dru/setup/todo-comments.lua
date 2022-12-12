@@ -72,6 +72,7 @@ todo_comments.setup(
             "--line-number",
 
             "--column",
+            "--hidden",
         },
 
         -- regex that will be used to match keywords.
