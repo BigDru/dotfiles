@@ -121,7 +121,6 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: monospace
-    #family: LiterationMono Nerd Font Mono
     family: LiterationMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
@@ -449,9 +448,12 @@ live_config_reload: true
 #  args:
 #    - --login
 shell:
-  program: "C:/Program Files/PowerShell/7/pwsh.exe"
+  #program: "C:/Program Files/PowerShell/7/pwsh.exe"
+  #args:
+    #- -WorkingDirectory ~
+  program: "C:/Windows/System32/wsl.exe"
   args:
-    - -WorkingDirectory ~
+    - --cd ~ --exec tmux
 
 # Startup directory
 #
