@@ -63,6 +63,16 @@ vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnost
 vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
+-- Gitsigns
+vim.api.nvim_set_keymap("n", "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", opts)
+vim.api.nvim_set_keymap("v", "<leader>hs", "<cmd>Gitsigns stage_hunk<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", opts)
+vim.api.nvim_set_keymap("v", "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>hS", "<cmd>Gitsigns stage_buffer<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>hu", "<cmd>Gitsigns undo_stage_hunk<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", opts)
+
 -- Navigate buffers
 vim.api.nvim_set_keymap("n", "<S-l>", ":bnext<cr>", opts)
 vim.api.nvim_set_keymap("n", "<S-h>", ":bprev<cr>", opts)
