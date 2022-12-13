@@ -69,7 +69,7 @@ return packer.startup({
         }
 
         -- highlights trailing whitespace
-        -- Note: see if treesitter can do this too!
+        -- TODO: see if treesitter can do this too!
         use
         {
             'ntpeters/vim-better-whitespace',
@@ -170,7 +170,7 @@ return packer.startup({
         use
         {
             "lervag/vimtex",
-            config = get_setup("vimtex"),
+            setup = get_setup("vimtex"),
         }
 
         -- ToggleTerm
