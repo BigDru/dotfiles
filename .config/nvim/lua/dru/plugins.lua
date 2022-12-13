@@ -191,6 +191,13 @@ return packer.startup({
             },
         }
 
+        -- Gitsigns
+        use
+        {
+            "lewis6991/gitsigns.nvim",
+            config = get_setup("gitsigns"),
+        }
+
         -- Bootstrap
         if packer_bootstrap then
             print("Packer synced")
