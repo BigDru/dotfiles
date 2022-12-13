@@ -13,6 +13,7 @@ vim.opt.conceallevel = 0        -- shows `` in markdown files
 vim.opt.cursorline = true
 vim.opt.expandtab = true        -- expands tab into spaces
 vim.opt.fileencoding = "utf-8"
+vim.opt.fillchars:append('eob: ')   -- hide tilde at end of buffer
 vim.opt.hlsearch = true         -- highlight all matches on a previous search pattern
 vim.opt.ignorecase = false      -- ignore case in search pattern
 vim.opt.incsearch = true        -- incremental search highlighting (as you type search pattern, matches are highlighted)
