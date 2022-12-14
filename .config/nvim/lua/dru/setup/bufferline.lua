@@ -7,6 +7,7 @@ bufferline.setup
 {
     options =
     {
+        mode = "buffers",
         numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
         close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -18,8 +19,8 @@ bufferline.setup
         -- as an escape hatch for people who cannot bear it for whatever reason
         indicator =
         {
-            icon = "▎",
-            style = "icon",
+            --icon = "▎", -- only use if style = icon
+            style = "none", -- icon | underline | none
         },
         buffer_close_icon = "",
         -- buffer_close_icon = '',
@@ -34,8 +35,7 @@ bufferline.setup
         --- bufferline so use this at your discretion knowing that it has
         --- some limitations that will *NOT* be fixed.
         -- name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
-        --   -- remove extension from markdown files for example
-        --   if buf.name:match('%.md') then
+        --   -- remove extension from markdown files for example if buf.name:match('%.md') then
         --     return vim.fn.fnamemodify(buf.name, ':t:r')
         --   end
         -- end,
@@ -73,9 +73,12 @@ bufferline.setup
             {
                 filetype = "NvimTree",
                 text = "File Explorer",
-                separator = true
+                text_align = "center",
+                separator = false,
+                padding = 0, -- align bufferline with nvim-tree
             }
         },
+        color_icons = true,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
         show_buffer_default_icon = true,
@@ -85,8 +88,8 @@ bufferline.setup
         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
         -- can also be a table containing 2 custom separators
         -- [focused and unfocused]. eg: { '|', '|' }
-        separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
-        enforce_regular_tabs = true,
+        separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' },
+        enforce_regular_tabs = false,
         always_show_bufferline = true,
         hover =
         {

@@ -64,8 +64,12 @@ return packer.startup({
         -- colorschemes
         use
         {
-            'RRethy/nvim-base16',
-            config = get_setup('nvim-base16'),
+            'folke/tokyonight.nvim',
+            config = get_setup('colorscheme'),
+            requires =
+            {
+                'edeneast/nightfox.nvim',
+            },
         }
 
         -- highlights trailing whitespace
@@ -80,6 +84,7 @@ return packer.startup({
         use
         {
             "hrsh7th/nvim-cmp",
+            config = get_setup("cmp"),
             requires =
             {
                 { "hrsh7th/cmp-buffer" },                   -- buffer completions
@@ -93,42 +98,41 @@ return packer.startup({
 
                 { "L3MON4D3/LuaSnip" },                     --snipping engine
             },
-            config = get_setup("cmp"),
         }
 
         -- LSP
         use
         {
             "neovim/nvim-lspconfig",                        -- enable LSP
+            config = get_setup("mason"),
             requires =
             {
                 { "williamboman/mason.nvim" },              -- Language Server installer
                 { "williamboman/mason-lspconfig.nvim" },    -- Makes managing packages installed by mason easier
                 { "VonHeikemen/lsp-zero.nvim" },            -- sets up installed LSPs with nvim-cmp automatically
             },
-            config = get_setup("mason"),
         }
 
         -- Telescope
         use
         {
             "nvim-telescope/telescope.nvim",
+            config = get_setup("telescope"),
             requires =
             {
                 { "nvim-telescope/telescope-fzy-native.nvim" },     -- precompiled fuzzy finder to speed up searches
             },
-            config = get_setup("telescope"),
         }
 
         -- Trouble
         use
         {
             "folke/trouble.nvim",
+            config = get_setup("trouble"),
             requires =
             {
                 'kyazdani42/nvim-web-devicons',
             },
-            config = get_setup("trouble"),
         }
 
         -- todo-comments
@@ -159,11 +163,11 @@ return packer.startup({
         use
         {
             "kyazdani42/nvim-tree.lua",
+            config = get_setup("nvim-tree"),
             requires =
             {
                 "kyazdani42/nvim-web-devicons",
             },
-            config = get_setup("nvim-tree"),
         }
 
         -- LaTex

@@ -23,14 +23,17 @@ nvim_tree.setup(
     },
     view =
     {
-        adaptive_size = true,
+        adaptive_size = true, -- resize window on each draw based on longest line
         centralize_selection = true,
         number = true,
+        signcolumn = "no",
     },
     renderer =
     {
-        add_trailing = true,
+        add_trailing = true, -- folder slash
         group_empty = false,
+        full_name = false,
+        highlight_git = false, -- true hides open highlighting option below
         highlight_opened_files = "all",
         indent_width = 2, -- default value is 2
         indent_markers =
@@ -40,12 +43,14 @@ nvim_tree.setup(
         },
         icons =
         {
-            show = {
+            show =
+            {
                 folder_arrow = false,
             },
         },
     },
-    diagnostics = {
+    diagnostics =
+    {
         enable = true,
     },
     filters =
