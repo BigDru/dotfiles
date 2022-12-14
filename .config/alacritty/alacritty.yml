@@ -453,7 +453,8 @@ shell:
     #- -WorkingDirectory ~
   program: "C:/Windows/System32/wsl.exe"
   args:
-    - --cd ~ --exec tmux
+    #- --cd ~ --exec tmux -- execute tmux when in wsl is is better
+    - --cd ~
 
 # Startup directory
 #
