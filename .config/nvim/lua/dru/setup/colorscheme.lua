@@ -6,3 +6,6 @@ if not status_ok then
     vim.notify("colorscheme " .. colorscheme .. " not found!")
     return
 end
+
+-- execute after applying color scheme
+vim.cmd [[ set background=dark ]]
