@@ -64,12 +64,8 @@ return packer.startup({
         -- colorschemes
         use
         {
-            'folke/tokyonight.nvim',
+            'edeneast/nightfox.nvim',
             config = get_setup('colorscheme'),
-            requires =
-            {
-                'edeneast/nightfox.nvim',
-            },
         }
 
         -- highlights trailing whitespace
