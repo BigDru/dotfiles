@@ -25,7 +25,7 @@ nvim_tree.setup(
     {
         adaptive_size = true, -- resize window on each draw based on longest line
         centralize_selection = true,
-        number = true,
+        number = false, -- messes with adaptive_size
         signcolumn = "no",
     },
     renderer =
