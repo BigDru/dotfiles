@@ -173,13 +173,6 @@ return packer.startup({
             setup = get_setup("vimtex"),
         }
 
-        -- ToggleTerm
-        use
-        {
-            "akinsho/toggleterm.nvim",
-            config = get_setup("toggleterm"),
-        }
-
         -- Bufferline
         use
         {
