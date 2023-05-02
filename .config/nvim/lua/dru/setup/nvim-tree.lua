@@ -11,8 +11,6 @@ vim.g.loaded_netrwPlugin = 1
 nvim_tree.setup(
 {
     disable_netrw = true,           -- disable Lexplore
-    open_on_setup = false,
-    open_on_setup_file = false,
     open_on_tab = true,
     hijack_cursor = true,
     prefer_startup_root = false,    -- default value is false
