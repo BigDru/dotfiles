@@ -22,7 +22,7 @@ end
 
 lsp_zero.preset("recommended")
 
-lsp_zero.configure('sumneko_lua',
+lsp_zero.configure('lua_ls',
 {
     settings =
     {
