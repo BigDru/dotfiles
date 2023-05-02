@@ -8,6 +8,19 @@ case $- in
       *) return;;
 esac
 
+export PATH=$PATH:~/bin
+
+# dru:
+alias cls='clear'
+alias ga='git add .; git status'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gd='clear; git diff HEAD'
+alias gl='clear; git log --graph --oneline --decorate --all'
+alias gld='clear; git log --graph --decorate --all'     # detailed
+alias gs='git status'
+alias gr='git reset; git status'
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -47,12 +60,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    # We have color support; assume it's compliant with Ecma-48
+    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
     else
-	color_prompt=
+    color_prompt=
     fi
 fi
 
@@ -88,9 +101,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF' 	# long list
-alias la='ls -A'	# Almost-all (no . and ..)
-alias l='ls -CF'	# Columns + classify
+alias ll='ls -alF'  # long list
+alias la='ls -A'    # Almost-all (no . and ..)
+alias l='ls -CF'    # Columns + classify
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -115,14 +128,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# dru:
-alias cls='clear'
-alias ga='git add .; git status'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gd='clear; git diff HEAD'
-alias gl='clear; git log --graph --oneline --decorate --all'
-alias gld='clear; git log --graph --decorate --all'		# detailed
-alias gs='git status'
-alias gr='git reset; git status'
