@@ -3,6 +3,11 @@ if not status_ok then
     return
 end
 
+local web_devicons_ok, web_devicons = pcall(require, "nvim-web-devicons")
+if not web_devicons_ok then
+    return
+end
+
 bufferline.setup
 {
     options =
@@ -81,7 +86,13 @@ bufferline.setup
         color_icons = true,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
-        show_buffer_default_icon = true,
+        get_element_icon = function(element)
+            -- element consists of {filetype: string, path: string, extension: string, directory: string}
+            -- This can be used to change how bufferline fetches the icon
+            -- for an element e.g. a buffer or a tab.
+            local icon, hl = web_devicons.get_icon_by_filetype(element.filetype, { default = false })
+            return icon, hl
+        end,
         show_close_icon = true,
         show_tab_indicators = true,
         show_duplicate_prefix = true,
