@@ -21,6 +21,8 @@ alias gld='clear; git log --graph --decorate --all'     # detailed
 alias gs='git status'
 alias gr='git reset; git status'
 
+export DOCKER_HOST="unix:///var/run/docker.sock"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
