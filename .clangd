@@ -1,0 +1,5 @@
+If:
+  PathMatch: .*
+  With:
+    CompileFlags:
+      Add: -isystem/usr/include

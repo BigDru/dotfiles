@@ -20,7 +20,20 @@ if not lsp_zero_ok then
     return
 end
 
+vim.lsp.set_log_level("trace")
+
 lsp_zero.preset("recommended")
+
+lsp_zero.configure('clangd',
+{
+    cmd =
+    {
+        "clangd",
+        "--background-index",
+        "--log=verbose",
+        "-j=8"
+    },
+})
 
 lsp_zero.configure('lua_ls',
 {

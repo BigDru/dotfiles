@@ -22,6 +22,7 @@ alias gs='git status'
 alias gr='git reset; git status'
 
 export DOCKER_HOST="unix:///var/run/docker.sock"
+export CLANGD_CONFIG=~/.clangd
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
