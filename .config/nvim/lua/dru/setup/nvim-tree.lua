@@ -55,4 +55,8 @@ nvim_tree.setup(
     {
         dotfiles = false,
     },
+    git =
+    {
+        ignore = false,
+    },
 })
