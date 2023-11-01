@@ -8,7 +8,7 @@ case $- in
       *) return;;
 esac
 
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/.local/bin:~/work/dev/Tools/
 
 # dru:
 alias cls='clear'
