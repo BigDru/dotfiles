@@ -191,6 +191,14 @@ return packer.startup({
             config = get_setup("gitsigns"),
         }
 
+        -- Neorg
+        use
+        {
+            "nvim-neorg/neorg",
+            config = get_setup("neorg"),
+            run = ":Neorg sync-parsers",
+        }
+
         -- Bootstrap
         if packer_bootstrap then
             print("Packer synced")
