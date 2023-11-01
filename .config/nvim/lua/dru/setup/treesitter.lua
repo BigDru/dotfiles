@@ -8,6 +8,7 @@ configs.setup
 {
     ensure_installed = "all",
     sync_install = false,
+    auto_install = false,
     ignore_install = { "" },
     highlight =
     {
@@ -21,6 +22,8 @@ configs.setup
         disable =
         {
             "lua",
+            "c",
+            "cpp",
             -- provide list of strings for parsers that aren't indenting well.
             -- Chris@machine offered "yaml" as an example
         },
