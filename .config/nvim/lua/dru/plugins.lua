@@ -199,6 +199,13 @@ return packer.startup({
             run = ":Neorg sync-parsers",
         }
 
+        -- Which Key
+        use
+        {
+            "folke/which-key.nvim",
+            config = get_setup("whichkey"),
+        }
+
         -- Bootstrap
         if packer_bootstrap then
             print("Packer synced")
