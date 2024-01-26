@@ -73,6 +73,9 @@ vim.api.nvim_set_keymap("n", "<leader>hu", "<cmd>Gitsigns undo_stage_hunk<cr>", 
 vim.api.nvim_set_keymap("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", opts)
 
+-- Neorg
+vim.api.nvim_set_keymap("n", "<leader>a", ":Neorg workspace todo<cr>", opts)
+
 -- Navigate buffers
 vim.api.nvim_set_keymap("n", "<S-l>", ":bnext<cr>", opts)
 vim.api.nvim_set_keymap("n", "<S-h>", ":bprev<cr>", opts)
