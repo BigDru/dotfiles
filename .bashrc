@@ -20,6 +20,9 @@ alias gl='clear; git log --graph --oneline --decorate --all'
 alias gld='clear; git log --graph --decorate --all'     # detailed
 alias gs='git status'
 alias gr='git reset; git status'
+alias ssholimex='export TERM=xterm-256color; ssh olimex'
+alias cat='bat'
+alias tm='tmux a || tmux'
 
 export DOCKER_HOST="unix:///var/run/docker.sock"
 export CLANGD_CONFIG=~/.clangd
