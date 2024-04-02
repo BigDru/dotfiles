@@ -14,6 +14,7 @@ vim.opt.cursorline = true
 vim.opt.expandtab = true        -- expands tab into spaces
 vim.opt.fileencoding = "utf-8"
 vim.opt.fillchars:append('eob: ')   -- hide tilde at end of buffer
+vim.opt.foldlevelstart = 99     -- 99 = no folds, default -1
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.hlsearch = true         -- highlight all matches on a previous search pattern

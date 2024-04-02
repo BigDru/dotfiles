@@ -73,6 +73,7 @@ return packer.startup({
         use
         {
             'ntpeters/vim-better-whitespace',
+            -- uncomment to enable whitespace conversion
             config = get_setup('vim-better-whitespace'),
         }
 
