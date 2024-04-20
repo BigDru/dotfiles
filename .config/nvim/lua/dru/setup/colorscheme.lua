@@ -1,11 +1,13 @@
---local colorscheme = "tokyonight-moon"
-local colorscheme = "nightfox"
+local M = 
+{
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+}
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-    vim.notify("colorscheme " .. colorscheme .. " not found!")
-    return
+function M.config()
+    vim.cmd.colorscheme "nightfox"
+    vim.cmd [[ set background=dark ]]
 end
 
--- execute after applying color scheme
-vim.cmd [[ set background=dark ]]
+return M

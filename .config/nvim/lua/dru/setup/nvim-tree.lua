@@ -1,62 +1,68 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
-    print("Require nvim-tree failed")
-    return
-end
-
---disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-nvim_tree.setup(
+local M = 
 {
-    disable_netrw = true,           -- disable Lexplore
-    open_on_tab = true,
-    hijack_cursor = true,
-    prefer_startup_root = false,    -- default value is false
-    update_focused_file =
+    "nvim-tree/nvim-tree.lua",
+    event = "VeryLazy",
+}
+
+function M.config()
+    nvim_tree = require "nvim-tree"
+
+    --disable netrw
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+
+    nvim_tree.setup(
     {
-        enable = true,
-        update_root = true,
-    },
-    view =
-    {
-        adaptive_size = true, -- resize window on each draw based on longest line
-        centralize_selection = true,
-        number = false, -- messes with adaptive_size
-        signcolumn = "no",
-    },
-    renderer =
-    {
-        add_trailing = true, -- folder slash
-        group_empty = false,
-        full_name = false,
-        highlight_git = false, -- true hides open highlighting option below
-        highlight_opened_files = "all",
-        indent_width = 2, -- default value is 2
-        indent_markers =
+        disable_netrw = true,           -- disable Lexplore
+        open_on_tab = true,
+        hijack_cursor = true,
+        prefer_startup_root = false,    -- default value is false
+        update_focused_file =
         {
             enable = true,
-            inline_arrows = false,
+            update_root = true,
         },
-        icons =
+        view =
         {
-            show =
+            adaptive_size = true, -- resize window on each draw based on longest line
+            centralize_selection = true,
+            number = false, -- messes with adaptive_size
+            signcolumn = "no",
+        },
+        renderer =
+        {
+            add_trailing = true, -- folder slash
+            group_empty = false,
+            full_name = false,
+            highlight_git = false, -- true hides open highlighting option below
+            highlight_opened_files = "all",
+            indent_width = 2, -- default value is 2
+            indent_markers =
             {
-                folder_arrow = false,
+                enable = true,
+                inline_arrows = false,
+            },
+            icons =
+            {
+                show =
+                {
+                    folder_arrow = false,
+                },
             },
         },
-    },
-    diagnostics =
-    {
-        enable = true,
-    },
-    filters =
-    {
-        dotfiles = false,
-    },
-    git =
-    {
-        ignore = false,
-    },
-})
+        diagnostics =
+        {
+            enable = true,
+        },
+        filters =
+        {
+            dotfiles = false,
+        },
+        git =
+        {
+            ignore = false,
+        },
+    })
+end
+
+return M
