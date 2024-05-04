@@ -3,16 +3,32 @@ local opts = { noremap = true, silent = true }
 -- noremap = no recurse map
 
 keymap("", "<Space>", "<Nop>", opts)
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- ensure ctrl+i isn't tab
+keymap("n", "<C-i>", "<C-i>", opts)
+
 -- Normal --
--- Better window navigation
+--TODO: Add a keymap for closing the buffer
+--keymap("n", "<A-w>", "<cmd>:Bdelete<cr>", opts)
+
+-- Better window navigation (m = alt)
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- Center search results
+-- repeat search
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+-- whole word match under cursor
+keymap("n", "*", "*zz", opts)
+keymap("n", "#", "#zz", opts)
+-- Partial match under cursor
+keymap("n", "g*", "g*zz", opts)
+keymap("n", "g#", "g#zz", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<cr>", opts)              -- increase size
@@ -21,8 +37,11 @@ keymap("n", "<C-Left>", ":vertical resize -2<cr>", opts)   -- increase size
 keymap("n", "<C-Right>", ":vertical resize +2<cr>", opts)  -- decrease size
 
 -- Navigate buffers
---keymap("n", "<S-l>", ":bnext<cr>", opts)
---keymap("n", "<S-h>", ":bprev<cr>", opts)
+keymap("n", "<S-l>", ":bnext<cr>", opts)
+keymap("n", "<S-h>", ":bprev<cr>", opts)
+
+-- Quit buffer
+keymap("n", "<leader>bw", ":Bdelete<cr>", opts)
 
 -- Insert
 -- jk fast to enter
@@ -48,6 +67,9 @@ keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<cr>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<cr>gv-gv", opts)
 
+-- keep register contents when pasting in visual mode
+keymap("x", "p", [["_dP]], opts)
+
 -- Nvim-Tree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "ZZ", ":NvimTreeClose<cr>ZZ", opts)
@@ -71,8 +93,5 @@ keymap("n", "<leader>hR", "<cmd>Gitsigns reset_buffer<cr>", opts)
 keymap("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", opts)
 
 -- Neorg
-keymap("n", "<leader>a", ":Neorg workspace todo<cr>", opts)
+keymap("n", "<leader>tt", ":Neorg workspace todo<cr>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<cr>", opts)
-keymap("n", "<S-h>", ":bprev<cr>", opts)

@@ -30,9 +30,14 @@ function M.config()
         --},
         --T = { name = "Treesitter" },
     --}
+    --
+    local mappings =
+    {
+        t = { name = "Neorg" }
+    }
 
     local which_key = require "which-key"
-    which_key.setup 
+    which_key.setup
     {
         plugins = {
             marks = true, -- shows a list of your marks on ' and `
@@ -101,8 +106,7 @@ function M.config()
             "`",
             "'",
             "g`",
-            "g'",
-            -- registers
+            "g'", -- registers
             '"',
             "<c-r>",
             -- spelling

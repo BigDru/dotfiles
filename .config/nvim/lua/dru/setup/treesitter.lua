@@ -3,15 +3,19 @@ local M =
     "nvim-treesitter/nvim-treesitter",
     dependencies =
     {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "p00f/nvim-ts-rainbow",
-    }
+        --"nvim-treesitter/nvim-treesitter-textobjects",
+        --"p00f/nvim-ts-rainbow",
+        "windwp/nvim-ts-autotag",
+    },
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
 }
 
 function M.config()
-    require ("nvim-treesitter.configs").setup
+    require ("nvim-treesitter.configs").setup(
     {
-        ensure_installed = {
+        ensure_installed =
+        {
             "awk",
             "bash",
             "c",
@@ -21,7 +25,6 @@ function M.config()
             "css",
             "csv",
             "doxygen",
-            "fsh",
             "html",
             "java",
             "javascript",
@@ -33,6 +36,7 @@ function M.config()
             "luadoc",
             "make",
             "markdown",
+            "markdown_inline",
             "norg",
             "objc",
             "objdump",
@@ -46,39 +50,36 @@ function M.config()
             "vim",
             "vimdoc",
             "xml",
-            "yaml" },
+            "yaml"
+        },
         sync_install = false,
-        auto_install = false,
-        ignore_install = { "" },
+        auto_install = true,
+        ignore_install = {},
+        modules = {},
         highlight =
         {
             enable = true,
-            disable = { "" },
-            additional_vim_regex_highlighting = true,
         },
         indent =
         {
             enable = true,
             disable =
             {
+                --TODO: make sure these aren't indenting well
                 "lua",
-                "c",
-                "cpp",
+                --"c",
+                --"cpp",
+                --
                 -- provide list of strings for parsers that aren't indenting well.
                 -- Chris@machine offered "yaml" as an example
             },
         },
-        rainbow =
-        {
-            enable = true,
-            extended_mode = true,
-            max_file_lines = nil,
-        },
-        autopairs =
+        autotag =
         {
             enable = true,
         },
-    }
+        autopairs = true,
+    })
 end
 
 return M

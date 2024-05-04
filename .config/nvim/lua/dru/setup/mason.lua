@@ -4,65 +4,37 @@ local M =
     dependencies =
     {
         "williamboman/mason.nvim",
-        "nvim-lua/plenary.nvim",
-        "neovim/nvim-lspconfig",
-        "VonHeikemen/lsp-zero.nvim",
     },
 }
 
 function M.config()
-    local mason_ok, mason = pcall(require, "mason")
-    if not mason_ok then
-        vim.notify("Unable to load Mason")
-        return
-    end
-
-    mason.setup()
-
-    local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-    if not mason_lspconfig_ok then
-        vim.notify("Unable to load Mason-lspconfig")
-        return
-    end
-
-    mason_lspconfig.setup()
-
-    local lsp_zero_ok, lsp_zero = pcall(require, "lsp-zero")
-    if not lsp_zero_ok then
-        vim.notify("Unable to load lsp-zero")
-        return
-    end
-
-    --vim.lsp.set_log_level("trace")
-
-    lsp_zero.preset("recommended")
-
-    --"--log=verbose",
-    lsp_zero.configure('clangd',
+    local servers =
     {
-        cmd =
+        "bashls",
+        "biome",
+        "clangd",
+        "cssls",
+        "eslint",
+        "html",
+        "jsonls",
+        "lua_ls",
+        "marksman",
+        "tsserver",
+        "yamlls",
+    }
+
+    require("mason").setup(
+    {
+        ui =
         {
-            "clangd",
-            "--background-index",
-            "-j=8"
+            border = "rounded",
         },
     })
 
-    lsp_zero.configure('lua_ls',
+    require("mason-lspconfig").setup(
     {
-        settings =
-        {
-            Lua =
-            {
-                diagnostics =
-                {
-                    globals = { "vim" },
-                },
-            },
-        },
+        ensure_installed = servers,
     })
-
-    lsp_zero.setup()
 end
 
 return M

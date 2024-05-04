@@ -1,4 +1,4 @@
-require('dru/options')
-require('dru/keymaps')
-require('dru/plugins')
-require('dru/lazy')
+require('dru.options')
+require('dru.keymaps')
+require('dru.plugins')
+require('dru.lazy')

@@ -3,6 +3,7 @@ vim.opt.autoindent = true       -- Copy indent from current line when starting a
 vim.opt.backup = false
 vim.opt.cindent = false          -- Enables automatic C program indenting for cinkeys (default "0{,0},0),0],:,0#,!^F,o,O,e")
 vim.opt.cmdheight = 2           -- more space in the command line for displaying messages
+vim.opt.clipboard = "unnamedplus"   -- Use system clipboard by default
 vim.opt.completeopt =           -- mostly for cmp (TODO: play with more)
 {
     "menuone",                  -- use popup menu even when there is only one match
@@ -29,7 +30,7 @@ vim.opt.number = true           -- set numbers in file
 vim.opt.numberwidth = 5         -- width of numbers column
 vim.opt.pumheight = 10          -- popup menu height
 vim.opt.pumblend = 10           -- popup menu blend (transparency w/ 0 being opaque and 100 being transparent)
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.shiftwidth = 0          -- controls how many cols text is indented with >> and <<. 0 means cols shifted == tabstop number
 vim.opt.showmode = false        -- hides INSERT as we have custom bar
 vim.opt.showtabline = 2         -- always show tab pages

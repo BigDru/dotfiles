@@ -14,17 +14,6 @@ local M =
 }
 
 function M.config()
-    local status_ok, telescope = pcall(require, "telescope")
-    if not status_ok then
-        print("Telescope require failed")
-        return
-    end
-
-    local status_ok, wk = pcall(require, "which-key")
-    if not status_ok then
-        print("which-key require failed in telescope")
-        return
-    end
     local wk = require "which-key"
     wk.register
     {
@@ -35,7 +24,7 @@ function M.config()
         ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
         ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
         ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-        ["<leader>fs"] = { "<cmd>Telescope grep_string<cr>", "Find String" },
+        ["<leader>fs"] = { "<cmd>Telescope grep_string<cr>", "Find String under cursor" },
         ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
         ["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "Highlights" },
         ["<leader>fi"] = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
@@ -55,11 +44,18 @@ function M.config()
         ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
         ["<leader>gC"] = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
 
-        ["<leader>g"] = { "", "LSP" },
         ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" }
     }
 
+    local telescope = require("telescope")
     telescope.setup({
+        defaults =
+        {
+            path_display =
+            {
+                "smart",
+            },
+        },
         pickers =
         {
             find_files =

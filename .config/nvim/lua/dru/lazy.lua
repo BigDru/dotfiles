@@ -13,13 +13,21 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
     spec = LAZY_PLUGIN_SPEC,
-    install = {
-        colorscheme = { "darkplus", "default" },
+    install =
+    {
+        colorscheme = { "nightfox", "default" },
     },
-    ui = {
+    ui =
+    {
         border = "rounded",
     },
-    change_detection = {
+    checker =
+    {
+        enabled = true,
+        notify = false,
+    },
+    change_detection =
+    {
         enabled = true,
         notify = false,
     },

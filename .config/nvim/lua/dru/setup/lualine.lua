@@ -1,22 +1,24 @@
-local M = 
+local M =
 {
     "nvim-lualine/lualine.nvim",
-    dependencies = 
+    dependencies =
     {
         "nvim-tree/nvim-web-devicons",
     },
 }
 
 function M.config()
-    require('lualine').setup 
+    local lazy_status = require("lazy.status")
+
+    require('lualine').setup
     {
-        options = 
+        options =
         {
             icons_enabled = true,
             theme = 'auto',
             component_separators = { left = '', right = ''},
             section_separators = { left = '', right = ''},
-            disabled_filetypes = 
+            disabled_filetypes =
             {
                 statusline = {},
                 winbar = {},
@@ -24,23 +26,33 @@ function M.config()
             ignore_focus = {},
             always_divide_middle = true,
             globalstatus = false,
-            refresh = 
+            refresh =
             {
                 statusline = 1000,
                 tabline = 1000,
                 winbar = 1000,
             }
         },
-        sections = 
+        sections =
         {
             lualine_a = {'mode'},
             lualine_b = {'branch', 'diff', 'diagnostics'},
             lualine_c = {'filename'},
-            lualine_x = {'encoding', 'fileformat', 'filetype'},
+            lualine_x =
+            {
+                {
+                    lazy_status.updates,
+                    cond = lazy_status.has_updates,
+                    color = { fg = "#ff9e64" },
+                },
+                'encoding',
+                'fileformat',
+                'filetype'
+            },
             lualine_y = {'progress'},
             lualine_z = {'location'}
         },
-        inactive_sections = 
+        inactive_sections =
         {
             lualine_a = {},
             lualine_b = {},

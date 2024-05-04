@@ -1,4 +1,4 @@
-local M = 
+local M =
 {
     "EdenEast/nightfox.nvim",
     lazy = false,

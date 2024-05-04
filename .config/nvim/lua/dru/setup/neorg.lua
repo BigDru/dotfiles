@@ -1,6 +1,7 @@
 local M =
 {
     "nvim-neorg/neorg",
+    version = "v7.0.0",
     lazy = false,
 }
 
