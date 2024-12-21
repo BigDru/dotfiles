@@ -61,7 +61,7 @@ function M.config()
         "jsonls",
         "lua_ls",
         "marksman",
-        "tsserver",
+        "ts_ls",
         "yamlls",
     }
 
