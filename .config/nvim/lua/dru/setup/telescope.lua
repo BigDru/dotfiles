@@ -1,3 +1,11 @@
+local function build_fzf_native()
+    if (vim.fn.has('win32')) then
+        return "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && copy build\\Release\\* build\\"
+    else
+        return "make"
+    end
+end
+
 local M =
 {
     "nvim-telescope/telescope.nvim",
@@ -5,7 +13,7 @@ local M =
     {
         {
             "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
+            build = build_fzf_native(),
         },
         "nvim-lua/plenary.nvim",
     },
