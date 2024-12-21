@@ -3,6 +3,8 @@ PATH=/usr/local/texlive/2022/bin/x86_64-linux:$PATH; export PATH
 MANPATH=/usr/local/texlive/2022/texmf-dist/doc/man/:$MANPATH; export MANPATH
 INFOPATH=/usr/local/texlive/2022/texmf-dist/doc/info/:$INFOPATH; export INFOPATH
 
+Set-Alias gl gl.ps1
+
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.

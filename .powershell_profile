@@ -1,0 +1,10 @@
+# Use the following to link the profile:
+#New-Item -Path $PROFILE -ItemType SymbolicLink -Value .\repos\dotfiles\.powershell_profile
+
+Set-Alias gs gs.ps1
+
+Remove-Item -PATH Alias:gl -Force
+Set-Alias gl gl.ps1
+
+Remove-Item -PATH Alias:gc -Force
+Set-Alias gc gc.ps1
