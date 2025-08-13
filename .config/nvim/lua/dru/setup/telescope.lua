@@ -23,36 +23,36 @@ local M =
 
 function M.config()
     local wk = require "which-key"
-    wk.register
+    wk.add
     {
-        ["<leader>f"] = { "", "Telescope / Find" },
+        { "<leader>f", "", desc = "Telescope / Find" },
 
-        ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-        ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-        ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-        ["<leader>fs"] = { "<cmd>Telescope grep_string<cr>", "Find String under cursor" },
-        ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-        ["<leader>fH"] = { "<cmd>Telescope highlights<cr>", "Highlights" },
-        ["<leader>fi"] = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-        ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-        ["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
-        ["<leader>fR"] = { "<cmd>Telescope registers<cr>", "Registers" },
-        ["<leader>fk"] = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        ["<leader>fC"] = { "<cmd>Telescope commands<cr>", "Commands" },
+        {"<leader>fb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+        {"<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
+        {"<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+        {"<leader>fp", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Projects" },
+        {"<leader>ft", "<cmd>Telescope live_grep<cr>", desc = "Find Text" },
+        {"<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Find String under cursor" },
+        {"<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help" },
+        {"<leader>fH", "<cmd>Telescope highlights<cr>", desc = "Highlights" },
+        {"<leader>fi", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", desc = "Media" },
+        {"<leader>fl", "<cmd>Telescope resume<cr>", desc = "Last Search" },
+        {"<leader>fM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+        {"<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
+        {"<leader>fR", "<cmd>Telescope registers<cr>", desc = "Registers" },
+        {"<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+        {"<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands" },
 
-        ["<leader>b"] = { "", "Buffers" },
-        ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+        {"<leader>b", "", desc = "Buffers" },
+        {"<leader>bb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find" },
 
-        ["<leader>g"] = { "", "Git" },
-        ["<leader>go"] = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        ["<leader>gb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        ["<leader>gc"] = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-        ["<leader>gC"] = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
+        {"<leader>g", "", desc = "Git" },
+        {"<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
+        {"<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+        {"<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
+        {"<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Checkout commit(for current file)" },
 
-        ["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" }
+        {"<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols" }
     }
 
     local telescope = require("telescope")

@@ -37,6 +37,7 @@
             dependencies =
             {
                 "rafamadriz/friendly-snippets",
+                "kmarius/jsregexp",
             },
         },                     --snipping engine
     },
