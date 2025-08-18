@@ -28,6 +28,7 @@ alias claude="claude --dangerously-skip-permissions"
 
 export DOCKER_HOST="unix:///var/run/docker.sock"
 export CLANGD_CONFIG=~/.clangd
+export EDITOR=nvim
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
