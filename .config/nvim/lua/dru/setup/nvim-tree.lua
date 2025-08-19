@@ -1,4 +1,4 @@
-local M = 
+local M =
 {
     "nvim-tree/nvim-tree.lua",
     event = "VeryLazy",
@@ -20,7 +20,7 @@ function M.config()
         update_focused_file =
         {
             enable = true,
-            update_root = true,
+            update_root = false,
         },
         view =
         {
