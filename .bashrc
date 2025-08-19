@@ -24,7 +24,7 @@ alias ssholimex='export TERM=xterm-256color; ssh olimex'
 alias cat='bat'
 alias tm='tmux a || tmux'
 
-alias claude="claude --dangerously-skip-permissions"
+alias clauded="claude --dangerously-skip-permissions"
 
 export DOCKER_HOST="unix:///var/run/docker.sock"
 export CLANGD_CONFIG=~/.clangd
