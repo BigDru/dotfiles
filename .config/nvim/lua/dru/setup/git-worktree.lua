@@ -1,6 +1,11 @@
 local M =
 {
-    "ThePrimeagen/git-worktree.nvim",
+    "polarmutex/git-worktree.nvim",
+    dependencies =
+    {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
+    }
 }
 
 function M.config()
@@ -9,15 +14,6 @@ function M.config()
         vim.notify("git-worktree failed to load")
         return
     end
-
-    git_worktree.setup(
-    {
-        -- change_directory_command = <str> -- default: "cd",
-        -- update_on_change = <boolean> -- default: true,
-        -- update_on_change_command = <str> -- default: "e .",
-        -- clearjumps_on_change = <boolean> -- default: true,
-        -- autopush = <boolean> -- default: false,
-    })
 end
 
 return M

@@ -25,7 +25,7 @@ function M.config()
     local wk = require "which-key"
     wk.add
     {
-        { "<leader>f", "", desc = "Telescope / Find" },
+        { "<leader>f", group = "Telescope / Find" },
 
         {"<leader>fb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
         {"<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme" },
@@ -43,14 +43,14 @@ function M.config()
         {"<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
         {"<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands" },
 
-        {"<leader>fw", desc = "Worktrees" },
-        {"<leader>fww", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch" },
+        {"<leader>fw", group = "Worktrees" },
+        {"<leader>fww", "<cmd>lua require('telescope').extensions.git_worktree.git_worktree()<cr>", desc = "Switch" },
         {"<leader>fwc", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", desc = "Create" },
 
-        {"<leader>b", "", desc = "Buffers" },
+        {"<leader>b", group = "Buffers" },
         {"<leader>bb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find" },
 
-        {"<leader>g", "", desc = "Git" },
+        {"<leader>g", group = "Git" },
         {"<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
         {"<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
         {"<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
