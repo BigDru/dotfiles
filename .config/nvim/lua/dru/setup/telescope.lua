@@ -43,6 +43,10 @@ function M.config()
         {"<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
         {"<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands" },
 
+        {"<leader>fw", desc = "Worktrees" },
+        {"<leader>fww", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "Switch" },
+        {"<leader>fwc", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", desc = "Create" },
+
         {"<leader>b", "", desc = "Buffers" },
         {"<leader>bb", "<cmd>Telescope buffers previewer=false<cr>", desc = "Find" },
 
@@ -91,6 +95,7 @@ function M.config()
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("git_worktree")
 end
 
 return M
