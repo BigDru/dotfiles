@@ -138,6 +138,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if grep -qEi "(microsoft|WSL)" /proc/version &> /dev/null; then
+    alias xclip='~/bin/wsl-clip'
+    export DISPLAY=
+fi
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
