@@ -23,6 +23,7 @@ alias gr='git reset; git status'
 alias ssholimex='export TERM=xterm-256color; ssh olimex'
 alias cat='bat'
 alias tm='tmux a || tmux'
+alias tmm='tmux -f ~/.config/tm_mobile.conf a || tmux -f ~/.config/tm_mobile.conf'
 
 alias clauded="claude --dangerously-skip-permissions"
 

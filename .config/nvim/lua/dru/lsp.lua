@@ -52,6 +52,7 @@ local servers = {
     "dockerls",
     "eslint",
     "html",
+    "java_language_server",
     "jsonls",
     "lua_ls",
     "marksman",
@@ -121,6 +122,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         safe_keyset("Show documentation for what is under cursor", "n", "K", vim.lsp.buf.hover, opts)
 
         safe_keyset("Show signature help", "n", "gs", vim.lsp.buf.signature_help, opts)
+
+        safe_keyset("Format Document", "n", "==", vim.lsp.buf.format, opts)
 
         -- opts.desc = "Show buffer diagnostics"
         -- keymap.set("n", "<leader>D", "<cmd>FzfLua diagnostics_document<CR>", opts)
